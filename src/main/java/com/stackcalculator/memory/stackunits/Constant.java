@@ -1,5 +1,7 @@
 package com.stackcalculator.memory.stackunits;
 
+import com.stackcalculator.exceptions.memory.UseConstantException;
+
 public class Constant implements StackUnit{
     private final double value;
     private final String name;
@@ -19,7 +21,12 @@ public class Constant implements StackUnit{
     }
 
     @Override
-    public void setValue(double value) {
-        //TODO exception
+    public void setValue(double value) throws UseConstantException {
+        throw new UseConstantException("unable to change the value of a constant");
+    }
+
+    @Override
+    public String toString() {
+        return value + name;
     }
 }

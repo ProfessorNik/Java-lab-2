@@ -17,4 +17,8 @@ public class Number implements StackUnit {
         this.value = value;
     }
 
+    @Override
+    public String toString(){
+        return Double.toString(value);
+    }
 }

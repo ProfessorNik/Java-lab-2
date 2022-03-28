@@ -6,5 +6,5 @@ import com.stackcalculator.memory.ExecutionContext;
 import com.stackcalculator.memory.NumberStack;
 
 public interface Command {
-    void make(NumberStack stack, ExecutionContext context) throws ExecutionEnvironmentException, CommandException;
+    void exec(NumberStack stack, ExecutionContext context) throws ExecutionEnvironmentException, CommandException;
 }

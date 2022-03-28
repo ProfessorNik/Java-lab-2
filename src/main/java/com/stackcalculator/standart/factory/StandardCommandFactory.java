@@ -28,9 +28,9 @@ public class StandardCommandFactory implements CommandFactory{
                 InvocationTargetException |
                 InstantiationException |
                 IllegalAccessException |
-                NoSuchMethodException e) {
+                NoSuchMethodException ex) {
             //TODO exception
-            e.printStackTrace();
+            ex.printStackTrace();
         }
         return command;
     }

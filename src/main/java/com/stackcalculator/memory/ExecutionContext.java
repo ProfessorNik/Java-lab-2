@@ -3,7 +3,12 @@ package com.stackcalculator.memory;
 import com.stackcalculator.exceptions.memory.UseConstantException;
 import com.stackcalculator.memory.stackunits.StackUnit;
 
+import java.io.OutputStream;
+
 public interface ExecutionContext {
-    StackUnit getNumberOnName(String name) throws UseConstantException;
-    public void addNewConstant(String name, double value) throws UseConstantException;
+    StackUnit getUnitByArg(String arg) throws UseConstantException;
+    void addNewConstant(String name, double value) throws UseConstantException;
+    void setNumberCurExecutableString(int num);
+    int getNumberCurExecutableString();
+    OutputStream getStandardOutputStream();
 }

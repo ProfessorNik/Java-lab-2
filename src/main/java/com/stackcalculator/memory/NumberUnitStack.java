@@ -3,6 +3,7 @@ package com.stackcalculator.memory;
 import com.stackcalculator.exceptions.memory.UnableGettingUnitException;
 import com.stackcalculator.memory.stackunits.StackUnit;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class NumberUnitStack implements NumberStack {
@@ -14,10 +15,11 @@ public class NumberUnitStack implements NumberStack {
 
     @Override
     public StackUnit pop() throws UnableGettingUnitException {
-        StackUnit unit = stack.pop();
-        if(unit == null)
+        try {
+            return stack.pop();
+        } catch (EmptyStackException ex) {
             throw UnableGettingUnitException.buildEmptyStack();
-        return stack.pop();
+        }
     }
 
     @Override
@@ -27,14 +29,20 @@ public class NumberUnitStack implements NumberStack {
 
     @Override
     public StackUnit peek() throws UnableGettingUnitException {
-        StackUnit unit = stack.peek();
-        if(unit == null)
+        try{
+            return stack.peek();
+        }catch (EmptyStackException ex) {
             throw UnableGettingUnitException.buildEmptyStack();
-        return stack.peek();
+        }
     }
 
     @Override
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return stack.size();
     }
 }

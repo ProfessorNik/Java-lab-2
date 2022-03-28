@@ -9,4 +9,5 @@ public interface NumberStack {
     void push(StackUnit unit);
     StackUnit peek() throws UnableGettingUnitException;
     boolean isEmpty();
+    int size();
 }

@@ -13,7 +13,11 @@ public class UseConstantException extends ExecutionEnvironmentException{
         return new UseConstantException("constant with name " + name + " define early");
     }
 
-    public static UseConstantException buildNotDefineConstant(String name){
-        return new UseConstantException("constant with name " + name + " not defined");
+    public static UseConstantException buildUnknownConstant(String name){
+        return new UseConstantException("constant with name " + name + " didn't define");
+    }
+
+    public static UseConstantException buildWrongNameFormat(){
+        return new UseConstantException("invalid format of constant name");
     }
 }
