@@ -8,7 +8,7 @@ import com.stackcalculator.memory.ExecutionContextForStackUnits;
 import com.stackcalculator.memory.NumberStack;
 import com.stackcalculator.memory.NumberUnitStack;
 import com.stackcalculator.memory.stackunits.StackUnit;
-import com.stackcalculator.standart.notincluded.Define;
+import com.stackcalculator.commands.notincluded.Define;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

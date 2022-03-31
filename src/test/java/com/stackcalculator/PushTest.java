@@ -1,5 +1,6 @@
 package com.stackcalculator;
 
+import com.stackcalculator.exceptions.commands.CommandException;
 import com.stackcalculator.exceptions.commands.IllegalNumArgsException;
 import com.stackcalculator.exceptions.memory.UnableGettingUnitException;
 import com.stackcalculator.exceptions.memory.UseConstantException;
@@ -8,7 +9,7 @@ import com.stackcalculator.memory.ExecutionContextForStackUnits;
 import com.stackcalculator.memory.NumberStack;
 import com.stackcalculator.memory.NumberUnitStack;
 import com.stackcalculator.memory.stackunits.StackUnit;
-import com.stackcalculator.standart.notincluded.Push;
+import com.stackcalculator.commands.notincluded.Push;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +40,7 @@ public class PushTest {
     }
 
     @Test
-    public void pushNumber() throws IllegalNumArgsException, UseConstantException, UnableGettingUnitException {
+    public void pushNumber() throws CommandException, UseConstantException, UnableGettingUnitException {
         String[] intNumberArgs = {"10"};
         String[] doubleNumberArgs = {"11.23"};
         String[] badFormatNumberArgs = {"23.121.12"};
@@ -62,7 +63,7 @@ public class PushTest {
     }
 
     @Test
-    public void pushConstant() throws UseConstantException, IllegalNumArgsException, UnableGettingUnitException {
+    public void pushConstant() throws UseConstantException, CommandException, UnableGettingUnitException {
         context.addNewConstant("hello", 12.11);
         String[] existingConstantArgs = {"hello"};
         String[] non_existingConstantArgs = {"world"};

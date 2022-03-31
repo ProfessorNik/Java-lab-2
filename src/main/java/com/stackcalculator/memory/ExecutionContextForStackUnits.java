@@ -1,14 +1,11 @@
 package com.stackcalculator.memory;
 
 import com.stackcalculator.exceptions.memory.UseConstantException;
-import com.stackcalculator.memory.stackunits.Constant;
 import com.stackcalculator.memory.stackunits.StackUnit;
 import com.stackcalculator.util.ArgumentParser;
 import com.stackcalculator.util.ArgumentParserImpl;
 
 import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ExecutionContextForStackUnits implements ExecutionContext {
     private final ArgumentParser argParser;
@@ -27,7 +24,7 @@ public class ExecutionContextForStackUnits implements ExecutionContext {
 
     @Override
     public void addNewConstant(String name, double value) throws UseConstantException {
-        if(!argParser.hasValidNameConstant(name))
+        if(!argParser.isValidConstantName(name))
             throw UseConstantException.buildWrongNameFormat();
         cStorage.addNewConstant(name, value);
     }

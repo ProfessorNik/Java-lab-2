@@ -1,4 +1,0 @@
-DEFINE=com.stackcalculator.standart.notincluded.Define
-POP=com.stackcalculator.standart.notincluded.Pop
-PUSH=com.stackcalculator.standart.notincluded.Push
-PRINT=com.stackcalculator.standart.notincluded.Print
